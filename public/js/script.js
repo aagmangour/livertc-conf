@@ -7,7 +7,6 @@ const myPeer = new Peer(undefined, {
 const myVideo = document.createElement("video");
 myVideo.muted = true;
 const peers = {};
-startVideo(myVideo, stream);
 
 //video play
 navigator.mediaDevices
@@ -16,7 +15,8 @@ navigator.mediaDevices
     audio: true,
   })
   .then((stream) => { 
-   
+    startVideo(myVideo, stream);
+
     myPeer.on("call", (call) => {
       call.answer(stream);
       const video = document.createElement("video");
