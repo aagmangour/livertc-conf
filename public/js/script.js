@@ -32,6 +32,18 @@ navigator.mediaDevices
 
 
   });
+  document.getElementById("share-screen").onclick = async() => {
+    const stream = await getScreenShare();
+    console.log('Screen sharing ');
+  }
+
+  async function getScreenShare() {
+    const Videostream = await navigator.mediaDevices.getDisplayMedia({video: true});
+    //const audio = await navigator.mediaDevices.getUserMedia({audio: true});
+
+    //playScreenMedia(myVideo,Videostream);
+    startVideo(myVideo, Videostream);
+  }
   
   function addUsertoCall(userId, stream) {
   const call = myPeer.call(userId, stream);
@@ -54,6 +66,14 @@ function startVideo(video, stream) {
   videoGrid.append(video);
 }
  
+function playScreenMedia(video, audio) {
+  video.srcObject = video;
+  video.addEventListener("loadedmetadata", () => {
+    video.play();
+    audio.play();
+  });
+  videoGrid.append(video);
+}
 
 //end call
 socket.on("peer-left", (userId) => {

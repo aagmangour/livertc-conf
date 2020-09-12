@@ -117,6 +117,21 @@ video {
   background: #2f94ca;
 }
 
+#share-screen {
+  font-family: "Montserrat", sans-serif;
+  font-size: var(--header7);
+  margin-right: 1rem;
+  padding: 1rem 2rem;
+  background: #0072b1;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+#share-scree:hover {
+  background: #2f94ca;
+}
 /* Media Query */
 @media screen and (max-width: 1024px) {
   /* Video Section */
@@ -143,6 +158,10 @@ video {
   }
 
   #invite-button {
+    font-size: var(--header4);
+  }
+
+  #share-screen {
     font-size: var(--header4);
   }
 }
