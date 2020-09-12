@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-app.get("/create-room/", (req, res) => {
+app.get("/createConf/", (req, res) => {
   res.redirect(`/${uuidV4()}`);
 });
 
